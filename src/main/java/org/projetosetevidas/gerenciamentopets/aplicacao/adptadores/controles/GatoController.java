@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping("cadastro/gato")
+@RequestMapping("gerenciamento/gatos")
 public class GatoController {
     private final GatoServicePort gatoServicePort;
     private final HttpServletRequest httpServletRequest;
