@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("gerenciamento/gatos")
@@ -39,7 +40,7 @@ public class GatoController {
     @PostMapping
     public ResponseEntity<?> salvar(@RequestBody GatoDTO pet) throws URISyntaxException {
         gatoServicePort.salvar(pet);
-        GatoDTO petSalvo = this.buscarUltimoRegistro().getBody();
+        GatoDTO petSalvo = gatoServicePort.buscarUltimoRegistroSalvo();
         return ResponseEntity.created(new URI(String.format("%s/%s", httpServletRequest.getRequestURL(), petSalvo.getId()))).build();
     }
 }
