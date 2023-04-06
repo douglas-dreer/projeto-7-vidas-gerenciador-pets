@@ -12,7 +12,7 @@ public class MapperUtil {
     private static final ModelMapper modelMapper = new ModelMapper();
 
     public static <D> D convertTo(Object bean, Class<D> dto) {
-        return modelMapper.map(bean, dto);
+        return bean == null ? null : modelMapper.map(bean, dto);
     }
 
     public static <S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
