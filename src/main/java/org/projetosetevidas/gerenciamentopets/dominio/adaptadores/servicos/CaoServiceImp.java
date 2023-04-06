@@ -7,10 +7,11 @@ import org.projetosetevidas.gerenciamentopets.dominio.portas.repositorios.CaoRep
 import org.projetosetevidas.gerenciamentopets.dominio.utils.MapperUtil;
 
 import java.util.List;
+import java.util.UUID;
 
 public class CaoServiceImp implements CaoServicePort {
 
-     private final CaoRepositoryPort caoRepository;
+    private final CaoRepositoryPort caoRepository;
 
     public CaoServiceImp(CaoRepositoryPort caoRepository) {
         this.caoRepository = caoRepository;
@@ -30,7 +31,25 @@ public class CaoServiceImp implements CaoServicePort {
 
     @Override
     public void salvar(CaoDTO dto) {
-        Cao cao = new Cao(dto);
+        dto.calcularIdade();
+        Cao cao = MapperUtil.convertTo(dto, Cao.class);
         this.caoRepository.salvar(cao);
+    }
+
+    @Override
+    public CaoDTO buscarUltimoRegistroSalvo() {
+        Cao pet = this.caoRepository.buscarUltimoRegistroCadastrado();
+        return MapperUtil.convertTo(pet, CaoDTO.class);
+    }
+
+    @Override
+    public CaoDTO buscarPorId(UUID id) {
+        Cao pet = this.caoRepository.buscarPorId(id);
+        return MapperUtil.convertTo(pet, CaoDTO.class);
+    }
+
+    @Override
+    public void excluir(CaoDTO pet) {
+        this.caoRepository.excluir(pet);
     }
 }

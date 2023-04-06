@@ -11,7 +11,7 @@ import org.projetosetevidas.gerenciamentopets.dominio.enums.RacaCaoEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Cao extends Pet{
+public class Cao extends Pet {
     private RacaCaoEnum raca;
 
     public Cao(CaoDTO dto) {
