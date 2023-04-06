@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.projetosetevidas.gerenciamentopets.dominio.Pet;
 import org.projetosetevidas.gerenciamentopets.dominio.enums.CorEnum;
 
 import java.time.LocalDate;

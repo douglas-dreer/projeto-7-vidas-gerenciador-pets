@@ -13,6 +13,7 @@ public enum CorEnum {
     CINZA("Cinza", "Gray"),
     LARANJA("Laranja", "Orange"),
     TRICOLOR("Tricolor", "Tricolor"),
+    CHUMBO("Chumbo", "Lead"),
     TIGRADO("Tigrado", "Tabby");
 
     private final String corPt;

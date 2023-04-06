@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("cadastro/pets")
+@RequestMapping("gerenciamento/pets")
 public class PetController {
     private final PetServicePort petServicePort;
 

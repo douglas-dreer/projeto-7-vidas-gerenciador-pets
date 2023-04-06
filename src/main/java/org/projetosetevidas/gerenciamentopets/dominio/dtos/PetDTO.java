@@ -8,6 +8,7 @@ import org.projetosetevidas.gerenciamentopets.dominio.enums.CorEnum;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -27,4 +28,8 @@ public class PetDTO {
     private LocalDateTime dataInclusao;
     private LocalDateTime dataModificacao;
 
+    public void calcularIdade() {
+        LocalDate hoje = LocalDate.now();
+        this.idade = Period.between(dataNascimento, hoje).getYears();
+    }
 }
