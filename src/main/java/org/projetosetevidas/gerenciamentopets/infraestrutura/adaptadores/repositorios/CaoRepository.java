@@ -20,7 +20,7 @@ public class CaoRepository implements CaoRepositoryPort {
 
     @Override
     public List<Cao> buscarTodos() {
-        List<CaoEntity> entityList = (List<CaoEntity>) this.springCaoRepository.findAll();
+        List<CaoEntity> entityList = this.springCaoRepository.findAll();
         return MapperUtil.mapList(entityList, Cao.class);
     }
 
