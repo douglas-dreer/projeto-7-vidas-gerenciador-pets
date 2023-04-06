@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.projetosetevidas.gerenciamentopets.dominio.enums.CorEnum;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ public class PetDTO {
     private UUID id;
     private String nome;
     private int idade;
-    private String cor;
+    private CorEnum cor;
     private LocalDate dataNascimento;
     private boolean isVacinado;
     private boolean isCastrado;

@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Columns;
 import org.projetosetevidas.gerenciamentopets.dominio.Pet;
+import org.projetosetevidas.gerenciamentopets.dominio.enums.CorEnum;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,9 +23,15 @@ public class PetEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    @Column(nullable = false)
     private String nome;
     private int idade;
-    private String cor;
+
+    @Enumerated(EnumType.STRING)
+    private CorEnum cor;
+
+
     private LocalDate dataNascimento;
     private boolean isVacinado = false;
     private boolean isCastrado = false;

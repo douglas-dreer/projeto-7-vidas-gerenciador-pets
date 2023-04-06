@@ -4,11 +4,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.projetosetevidas.gerenciamentopets.dominio.dtos.PetDTO;
+import org.projetosetevidas.gerenciamentopets.dominio.enums.CorEnum;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,7 +25,7 @@ public class Pet {
     private UUID id;
     private String nome;
     private int idade;
-    private String cor;
+    private CorEnum cor;
     private LocalDate dataNascimento;
     private boolean isVacinado;
     private boolean isCastrado = false;
