@@ -30,6 +30,7 @@ public class GatoServiceImp implements GatoServicePort {
 
     @Override
     public void salvar(GatoDTO dto) {
+        dto.calcularIdade();
         Gato pet = MapperUtil.convertTo(dto, Gato.class);
         this.gatoRepository.salvar(pet);
     }
