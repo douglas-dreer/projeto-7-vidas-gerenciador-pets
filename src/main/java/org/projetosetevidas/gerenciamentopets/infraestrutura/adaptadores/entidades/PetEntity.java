@@ -1,7 +1,10 @@
 package org.projetosetevidas.gerenciamentopets.infraestrutura.adaptadores.entidades;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.projetosetevidas.gerenciamentopets.dominio.Pet;
 
 import java.time.LocalDate;
@@ -20,21 +23,32 @@ public class PetEntity {
     private UUID id;
     private String nome;
     private int idade;
-    private String raca;
     private String cor;
     private LocalDate dataNascimento;
-    private boolean isVacinado;
-    private boolean isCastrado;
-    private boolean isAdotado;
+    private boolean isVacinado = false;
+    private boolean isCastrado = false;;
+    private boolean isAdotado = false;;
     private String observacao;
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataModificacao;
+    private LocalDateTime dataInclusao = LocalDateTime.now();
+    private LocalDateTime dataModificacao = LocalDateTime.now();
+
+    @PrePersist
+    public void prePersist() {
+        this.dataInclusao = LocalDateTime.now();
+        this.isVacinado = false;
+        this.isAdotado = false;
+        this.isCastrado = false;
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.dataModificacao = LocalDateTime.now();
+    }
 
     public PetEntity(Pet pet) {
         this.id = pet.getId();
         this.nome = pet.getNome();
         this.idade = pet.getIdade();
-        this.raca = pet.getRaca();
         this.cor = pet.getCor();
         this.dataNascimento = pet.getDataNascimento();
         this.isVacinado = pet.isVacinado();
@@ -48,7 +62,7 @@ public class PetEntity {
     public Pet toPet() {
         return Pet.builder()
                 .id(this.id).nome(this.nome).idade(this.idade)
-                .raca(this.raca).cor(this.raca).dataNascimento(this.dataNascimento)
+                .dataNascimento(this.dataNascimento)
                 .isVacinado(this.isVacinado).isCastrado(this.isCastrado)
                 .isAdotado(this.isAdotado).observacao(this.observacao)
                 .dataInclusao(this.dataInclusao).dataModificacao(this.dataModificacao)

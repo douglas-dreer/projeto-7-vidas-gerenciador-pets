@@ -1,5 +1,9 @@
 package org.projetosetevidas.gerenciamentopets.dominio;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,21 +22,20 @@ public class Pet {
     private UUID id;
     private String nome;
     private int idade;
-    private String raca;
     private String cor;
     private LocalDate dataNascimento;
     private boolean isVacinado;
-    private boolean isCastrado;
-    private boolean isAdotado;
+    private boolean isCastrado = false;
+    private boolean isAdotado = false;
     private String observacao;
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataModificacao;
+    private LocalDateTime dataInclusao = LocalDateTime.now();
+    private LocalDateTime dataModificacao = LocalDateTime.now();
+
 
     public Pet(PetDTO dto) {
         this.id = dto.getId();
         this.nome = dto.getNome();
         this.idade = dto.getIdade();
-        this.raca = dto.getRaca();
         this.cor = dto.getCor();
         this.dataNascimento = dto.getDataNascimento();
         this.isVacinado = dto.isVacinado();
@@ -43,13 +46,11 @@ public class Pet {
         this.dataModificacao = dto.getDataModificacao();
     }
 
-    public PetDTO toPetDTO() {
-        return PetDTO.builder()
-                .id(this.id).nome(this.nome).idade(this.idade)
-                .raca(this.raca).cor(this.raca).dataNascimento(this.dataNascimento)
-                .isVacinado(this.isVacinado).isCastrado(this.isCastrado)
-                .isAdotado(this.isAdotado).observacao(this.observacao)
-                .dataInclusao(this.dataInclusao).dataModificacao(this.dataModificacao)
-                .build();
+
+    public String toJSON() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+        return mapper.writeValueAsString(this);
     }
 }

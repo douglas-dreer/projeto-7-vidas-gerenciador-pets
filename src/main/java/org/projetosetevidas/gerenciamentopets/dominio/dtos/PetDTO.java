@@ -17,7 +17,6 @@ public class PetDTO {
     private UUID id;
     private String nome;
     private int idade;
-    private String raca;
     private String cor;
     private LocalDate dataNascimento;
     private boolean isVacinado;
