@@ -18,7 +18,7 @@ public class GatoRepository implements GatoRepositoryPort {
 
     @Override
     public List<Gato> buscarTodos() {
-        List<GatoEntity> petEntityList = (List<GatoEntity>) this.springRepository.findAll();
+        List<GatoEntity> petEntityList = this.springRepository.findAll();
         return MapperUtil.mapList(petEntityList, Gato.class);
     }
 

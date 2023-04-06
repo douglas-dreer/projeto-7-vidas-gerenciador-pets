@@ -24,9 +24,7 @@ public enum RacaCaoEnum {
     YORKSHIRE_TERRIER("Yorkshire Terrier", "Yorkshire Terrier"),
     MUTT("Mutt", "Vira-Lata");
 
-    @Setter
     private String ptBR;
-    @Setter
     private String en;
 
     public static RacaCaoEnum procurarPorNome(String str) {

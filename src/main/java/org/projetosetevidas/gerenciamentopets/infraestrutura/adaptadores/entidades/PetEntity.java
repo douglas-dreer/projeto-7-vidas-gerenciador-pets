@@ -52,27 +52,4 @@ public class PetEntity {
         this.dataModificacao = LocalDateTime.now();
     }
 
-    public PetEntity(Pet pet) {
-        this.id = pet.getId();
-        this.nome = pet.getNome();
-        this.idade = pet.getIdade();
-        this.cor = pet.getCor();
-        this.dataNascimento = pet.getDataNascimento();
-        this.isVacinado = pet.isVacinado();
-        this.isCastrado = pet.isCastrado();
-        this.isAdotado = pet.isAdotado();
-        this.observacao = pet.getObservacao();
-        this.dataInclusao = pet.getDataInclusao();
-        this.dataModificacao = pet.getDataModificacao();
-    }
-
-    public Pet toPet() {
-        return Pet.builder()
-                .id(this.id).nome(this.nome).idade(this.idade)
-                .dataNascimento(this.dataNascimento)
-                .isVacinado(this.isVacinado).isCastrado(this.isCastrado)
-                .isAdotado(this.isAdotado).observacao(this.observacao)
-                .dataInclusao(this.dataInclusao).dataModificacao(this.dataModificacao)
-                .build();
-    }
 }

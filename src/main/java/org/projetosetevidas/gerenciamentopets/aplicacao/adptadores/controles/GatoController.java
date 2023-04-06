@@ -37,7 +37,7 @@ public class GatoController {
     }
 
     @PostMapping
-    public ResponseEntity salvar(@RequestBody GatoDTO pet, HttpServletRequest httpServeletRequest) throws URISyntaxException {
+    public ResponseEntity<?> salvar(@RequestBody GatoDTO pet) throws URISyntaxException {
         gatoServicePort.salvar(pet);
         GatoDTO petSalvo = this.buscarUltimoRegistro().getBody();
         return ResponseEntity.created(new URI(String.format("%s/%s", httpServletRequest.getRequestURL(), petSalvo.getId()))).build();

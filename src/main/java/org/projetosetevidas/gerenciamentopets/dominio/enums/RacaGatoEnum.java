@@ -36,9 +36,7 @@ public enum RacaGatoEnum {
     SPHYNX("Sphynx", "Esfinge"),
     MUTT("Mutt", "Sem Raça Definida");
 
-    @Setter
     private String en;
-    @Setter
     private String ptBR;
 
     public static RacaGatoEnum procurarPorNome(String str) {

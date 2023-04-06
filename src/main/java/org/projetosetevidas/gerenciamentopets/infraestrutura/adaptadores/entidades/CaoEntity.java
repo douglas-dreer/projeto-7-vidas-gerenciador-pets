@@ -17,19 +17,4 @@ import org.projetosetevidas.gerenciamentopets.dominio.enums.RacaCaoEnum;
 @Setter
 public class CaoEntity extends PetEntity {
     private RacaCaoEnum raca;
-
-    public CaoEntity(Cao cao) {
-        this.setId(cao.getId());
-        this.setNome(cao.getNome());
-        this.setIdade(cao.getIdade());
-        this.setRaca(cao.getRaca());
-        this.setDataNascimento(cao.getDataNascimento());
-        this.setVacinado(cao.isVacinado());
-        this.setCastrado(cao.isCastrado());
-        this.setAdotado(cao.isAdotado());
-        this.setObservacao(cao.getObservacao());
-        this.setDataInclusao(cao.getDataInclusao());
-        this.setDataModificacao(cao.getDataModificacao());
-    }
-
 }
