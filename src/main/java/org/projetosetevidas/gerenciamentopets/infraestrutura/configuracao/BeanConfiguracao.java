@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfiguracao {
     @Bean
-    PetServicePort produtoService(PetRepositoryPort petRepositoryPort) {
+    PetServicePort petService(PetRepositoryPort petRepositoryPort) {
         return new PetServiceImp(petRepositoryPort);
     }
 }
