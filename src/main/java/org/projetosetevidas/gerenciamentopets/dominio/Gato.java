@@ -10,6 +10,6 @@ import org.projetosetevidas.gerenciamentopets.dominio.enums.RacaGatoEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Gato extends Pet{
+public class Gato extends Pet {
     private RacaGatoEnum raca;
 }

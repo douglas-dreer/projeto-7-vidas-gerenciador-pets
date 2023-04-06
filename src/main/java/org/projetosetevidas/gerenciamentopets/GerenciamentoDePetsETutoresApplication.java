@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = SpringPetRepository.class)
 public class GerenciamentoDePetsETutoresApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(GerenciamentoDePetsETutoresApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GerenciamentoDePetsETutoresApplication.class, args);
+    }
 
 }

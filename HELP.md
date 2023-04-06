@@ -1,11 +1,14 @@
 # Read Me First
+
 The following was discovered as part of building this project:
 
-* The original package name 'org.projetosetevidas.gerenciamento-pets' is invalid and this project uses 'org.projetosetevidas.gerenciamentopets' instead.
+* The original package name 'org.projetosetevidas.gerenciamento-pets' is invalid and this project uses '
+  org.projetosetevidas.gerenciamentopets' instead.
 
 # Getting Started
 
 ### Reference Documentation
+
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -18,6 +21,7 @@ For further reference, please consider the following sections:
 * [Spring Web](https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#web)
 
 ### Guides
+
 The following guides illustrate how to use some features concretely:
 
 * [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)

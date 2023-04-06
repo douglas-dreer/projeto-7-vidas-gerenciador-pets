@@ -14,7 +14,6 @@ import org.projetosetevidas.gerenciamentopets.dominio.enums.RacaGatoEnum;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GatoEntity extends PetEntity{
-   private RacaGatoEnum raca;
-
+public class GatoEntity extends PetEntity {
+    private RacaGatoEnum raca;
 }
