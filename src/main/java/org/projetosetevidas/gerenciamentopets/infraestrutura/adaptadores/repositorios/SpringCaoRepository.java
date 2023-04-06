@@ -1,6 +1,5 @@
 package org.projetosetevidas.gerenciamentopets.infraestrutura.adaptadores.repositorios;
 
-import org.projetosetevidas.gerenciamentopets.dominio.Cao;
 import org.projetosetevidas.gerenciamentopets.infraestrutura.adaptadores.entidades.CaoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
