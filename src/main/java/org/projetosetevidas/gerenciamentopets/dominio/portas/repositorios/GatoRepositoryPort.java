@@ -8,4 +8,6 @@ public interface GatoRepositoryPort {
     List<Gato> buscarTodos();
     List<Gato> buscarPorNome(String nome);
     void salvar(Gato pet);
+
+    Gato buscarUltimoRegistroCadastrado();
 }

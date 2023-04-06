@@ -24,7 +24,7 @@ public class GatoRepository implements GatoRepositoryPort {
 
     @Override
     public List<Gato> buscarPorNome(String nome) {
-        List<GatoEntity> petEntityList = this.springRepository.findPetEntityByNomeContainingIgnoreCase(nome);
+        List<GatoEntity> petEntityList = this.springRepository.findGatoEntityByNomeContainingIgnoreCase(nome);
         return MapperUtil.mapList(petEntityList, Gato.class);
     }
 
@@ -32,5 +32,11 @@ public class GatoRepository implements GatoRepositoryPort {
     public void salvar(Gato pet) {
         GatoEntity petEntity = MapperUtil.convertTo(pet, GatoEntity.class);
         this.springRepository.save(petEntity);
+    }
+
+    @Override
+    public Gato buscarUltimoRegistroCadastrado() {
+        GatoEntity gatoEntity = this.springRepository.findTopByOrderByIdDesc();
+        return MapperUtil.convertTo(gatoEntity, Gato.class);
     }
 }

@@ -30,7 +30,13 @@ public class GatoServiceImp implements GatoServicePort {
 
     @Override
     public void salvar(GatoDTO dto) {
-        Gato pet = new Gato(dto);
+        Gato pet = MapperUtil.convertTo(dto, Gato.class);
         this.gatoRepository.salvar(pet);
+    }
+
+    @Override
+    public GatoDTO buscarUltimoRegistroSalvo() {
+        Gato pet = this.gatoRepository.buscarUltimoRegistroCadastrado();
+        return MapperUtil.convertTo(pet, GatoDTO.class);
     }
 }

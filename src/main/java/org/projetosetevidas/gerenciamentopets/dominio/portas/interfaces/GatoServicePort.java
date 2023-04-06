@@ -10,4 +10,6 @@ public interface GatoServicePort {
     List<GatoDTO> buscarPorNome(String nome);
 
     void salvar(GatoDTO pet);
+
+    GatoDTO buscarUltimoRegistroSalvo();
 }

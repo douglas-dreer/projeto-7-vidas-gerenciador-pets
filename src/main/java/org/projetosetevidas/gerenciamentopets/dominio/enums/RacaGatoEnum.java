@@ -34,7 +34,7 @@ public enum RacaGatoEnum {
     SIAMESE("Siamese", "Siamês"),
     SIBERIAN("Siberian", "Siberiano"),
     SPHYNX("Sphynx", "Esfinge"),
-    MUTT("Mutt", "Vira-Lata");
+    MUTT("Mutt", "Sem Raça Definida");
 
     @Setter
     private String en;
