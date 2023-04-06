@@ -26,8 +26,8 @@ public class PetEntity {
     private String cor;
     private LocalDate dataNascimento;
     private boolean isVacinado = false;
-    private boolean isCastrado = false;;
-    private boolean isAdotado = false;;
+    private boolean isCastrado = false;
+    private boolean isAdotado = false;
     private String observacao;
     private LocalDateTime dataInclusao = LocalDateTime.now();
     private LocalDateTime dataModificacao = LocalDateTime.now();

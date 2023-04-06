@@ -1,6 +1,9 @@
 package org.projetosetevidas.gerenciamentopets.dominio;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.projetosetevidas.gerenciamentopets.dominio.dtos.CaoDTO;
 import org.projetosetevidas.gerenciamentopets.dominio.enums.RacaCaoEnum;
 
